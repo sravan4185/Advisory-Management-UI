@@ -1,0 +1,171 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+  }
+  
+  nav {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    text-align: center; /* Center the text */
+  }
+  
+  .nav-title {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  h2 {
+    color: #333;
+    text-align: center; /* Center the title */
+    margin-top: 20px;
+  }
+  
+  .no-data {
+    text-align: center;
+    font-size: 18px;
+    color: #666;
+    margin-top: 20px;
+  }
+  
+  .advisor-table {
+    width: 90%;
+    margin: 20px auto;
+    border-collapse: collapse;
+  }
+  
+  table, th, td {
+    border: 1px solid #ddd;
+  }
+  
+  th, td {
+    padding: 10px;
+    text-align: left;
+  }
+  
+  th {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .action-buttons {
+    display: flex;
+    gap: 10px; /* Add space between buttons */
+  }
+  
+  button {
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  button.delete-button {
+    background-color: #dc3545;
+    color: white;
+  }
+  
+  button.delete-button:hover {
+    background-color: #c82333;
+  }
+  
+  button.edit-button {
+    background-color: #28a745;
+    color: white;
+  }
+  
+  button.edit-button:hover {
+    background-color: #218838;
+  }
+  
+  button.add-button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    text-decoration: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+  }
+  
+  button.add-button:hover {
+    background-color: #218838;
+  }
+  
+  a {
+    color: #007bff;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  form {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: auto;
+  }
+  
+  form label {
+    display: block;
+    margin-top: 10px;
+  }
+  
+  form input {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .form-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  form button {
+    flex: 1;
+    margin-right: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  form button:last-child {
+    margin-right: 0;
+  }
+  
+  form button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  form .cancel-button {
+    background-color: #dc3545 !important;
+  }
+  
+  form .cancel-button:hover {
+    background-color: #c82333 !important;
+  }
+  
+  .error {
+    color: red;
+    font-size: 0.875em;
+  }
+  

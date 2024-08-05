@@ -1,0 +1,30 @@
+<h2>Advisor List</h2>
+<div *ngIf="advisors.length === 0" class="no-data">
+  No data available.
+</div>
+<table *ngIf="advisors.length > 0" class="advisor-table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>SIN</th>
+      <th>Address</th>
+      <th>Phone</th>
+      <th>Health Status</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let advisor of advisors">
+      <td>{{advisor.name}}</td>
+      <td>{{advisor.sin}}</td>
+      <td>{{advisor.address}}</td>
+      <td>{{advisor.phone}}</td>
+      <td>{{advisor.healthStatus}}</td>
+      <td class="action-buttons">
+        <button class="delete-button" (click)="confirmDelete(advisor.id)">Delete</button>
+        <button class="edit-button" [routerLink]="['/advisor-detail', advisor.id]">Edit</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<button class="add-button" routerLink="/advisor-detail">Add New Advisor</button>

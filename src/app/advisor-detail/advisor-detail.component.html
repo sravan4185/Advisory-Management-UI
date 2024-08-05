@@ -1,0 +1,38 @@
+<h2>{{ advisorId ? 'Edit Advisor' : 'Add New Advisor' }}</h2>
+<form [formGroup]="advisorForm" (ngSubmit)="onSubmit()">
+  <label for="name">Name:</label>
+  <input id="name" formControlName="name" required maxlength="255">
+  <div *ngIf="name?.invalid && (name?.dirty || name?.touched)" class="error">
+    <div *ngIf="name?.errors?.['required']">Name is required.</div>
+    <div *ngIf="name?.errors?.['maxlength']">Name cannot be more than 255 characters long.</div>
+  </div>
+
+  <label for="sin">SIN:</label>
+  <input id="sin" formControlName="sin" required minlength="9" maxlength="9" type="text" pattern="[0-9]*">
+  <div *ngIf="sin?.invalid && (sin?.dirty || sin?.touched)" class="error">
+    <div *ngIf="sin?.errors?.['required']">SIN is required.</div>
+    <div *ngIf="sin?.errors?.['minlength'] || sin?.errors?.['maxlength']">SIN must be exactly 9 characters long.</div>
+    <div *ngIf="sin?.errors?.['pattern']">SIN must be numeric.</div>
+  </div>
+
+  <label for="address">Address:</label>
+  <input id="address" formControlName="address" maxlength="255">
+  <div *ngIf="address?.invalid && (address?.dirty || address?.touched)" class="error">
+    <div *ngIf="address?.errors?.['maxlength']">Address cannot be more than 255 characters long.</div>
+  </div>
+
+  <label for="phone">Phone:</label>
+  <input id="phone" formControlName="phone" minlength="8" maxlength="8" type="text" pattern="[0-9]*">
+  <div *ngIf="phone?.invalid && (phone?.dirty || phone?.touched)" class="error">
+    <div *ngIf="phone?.errors?.['minlength'] || phone?.errors?.['maxlength']">Phone must be exactly 8 characters long.</div>
+    <div *ngIf="phone?.errors?.['pattern']">Phone must be numeric.</div>
+  </div>
+
+  <label for="healthStatus">Health Status:</label>
+  <input id="healthStatus" formControlName="healthStatus" readonly>
+
+  <div class="form-buttons">
+    <button type="submit" [disabled]="advisorForm.invalid">{{ advisorId ? 'Update' : 'Create' }}</button>
+    <button type="button" class="cancel-button" (click)="onCancel()">Cancel</button>
+  </div>
+</form>
